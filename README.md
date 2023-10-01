@@ -1,8 +1,7 @@
 # Jogo da velha em Python
 
-## Jogo da velha em Python para o Projeto Programar
+## Jogo da velha desenvolvido em Python para o Projeto Programar (Faculdade)
 
-### Este repositorio foi criado para disponibilizar o codigo feito no video do projeto programar
+### Este repositorio foi criado para disponibilizar o codigo feito na video-aula do projeto programar
 
 - *Tente **não copiar o codigo**, a menos que não esteja conseguindo sair do lugar;*
-- *Caso for utilizar o codigo para alguma aula, video ou algo parecido, favor dar os devidos créditos;*

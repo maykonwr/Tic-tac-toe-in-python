@@ -1,4 +1,4 @@
-tabela = ['_','_','_',
+table = ['_','_','_',
           '_','_','_',
           '_','_','_']
 
@@ -6,88 +6,88 @@ print('Olá, seja bem vindo ao jogo da velha!!\n')
 print('Como jogar:\n')
 print('Escolha com seu amigo qual você vai ser, sendo o jogador 1 "X" e o jogador 2 "O"')
 
-def desenhar_tabela(vetor_da_velha):
+def draw_table(old_vector):
     jogoDaVelha = ''
-    for i in range(len(vetor_da_velha)):
+    for i in range(len(old_vector)):
         if(i == 2 or i == 5 or i == 8):
-            jogoDaVelha += " " + vetor_da_velha[i] + " \n"
+            jogoDaVelha += " " + old_vector[i] + " \n"
         else :
-            jogoDaVelha += " " + vetor_da_velha[i] + " |"
+            jogoDaVelha += " " + old_vector[i] + " |"
     return jogoDaVelha
 
-def verificar_tabela(vetor_da_velha, posicao):
-    resultado = False
-    if(vetor_da_velha[posicao] == '_'):
-        resultado = True
-    return resultado
+def check_table(old_vector, position):
+    result = False
+    if(old_vector[position] == '_'):
+        result = True
+    return result
 
-def verificar_vitoria(vetor_da_velha,simbolo):
-    resultado = False
-    # Linha
-    if(vetor_da_velha[0] == simbolo and vetor_da_velha[1] == simbolo and vetor_da_velha[2] == simbolo):
-        resultado = True
-    elif(vetor_da_velha[3] == simbolo and vetor_da_velha[4] == simbolo and vetor_da_velha[5] == simbolo):
-        resultado = True
-    elif(vetor_da_velha[6] == simbolo and vetor_da_velha[7] == simbolo and vetor_da_velha[8] == simbolo):
-        resultado = True
-    # Coluna
-    elif(vetor_da_velha[0] == simbolo and vetor_da_velha[3] == simbolo and vetor_da_velha[6] == simbolo):
-        resultado = True
-    elif(vetor_da_velha[1] == simbolo and vetor_da_velha[4] == simbolo and vetor_da_velha[7] == simbolo):
-        resultado = True
-    elif(vetor_da_velha[2] == simbolo and vetor_da_velha[5] == simbolo and vetor_da_velha[8] == simbolo):
-        resultado = True
+def check_victory(old_vector,symbol):
+    result = False
+    # Linhas
+    if(old_vector[0] == symbol and old_vector[1] == symbol and old_vector[2] == symbol):
+        result = True
+    elif(old_vector[3] == symbol and old_vector[4] == symbol and old_vector[5] == symbol):
+        result = True
+    elif(old_vector[6] == symbol and old_vector[7] == symbol and old_vector[8] == symbol):
+        result = True
+    # Colunas
+    elif(old_vector[0] == symbol and old_vector[3] == symbol and old_vector[6] == symbol):
+        result = True
+    elif(old_vector[1] == symbol and old_vector[4] == symbol and old_vector[7] == symbol):
+        result = True
+    elif(old_vector[2] == symbol and old_vector[5] == symbol and old_vector[8] == symbol):
+        result = True
     # Vertical
-    elif(vetor_da_velha[0] == simbolo and vetor_da_velha[4] == simbolo and vetor_da_velha[8] == simbolo):
-        resultado = True
-    elif(vetor_da_velha[6] == simbolo and vetor_da_velha[4] == simbolo and vetor_da_velha[2] == simbolo):
-        resultado = True
-    return resultado
+    elif(old_vector[0] == symbol and old_vector[4] == symbol and old_vector[8] == symbol):
+        result = True
+    elif(old_vector[6] == symbol and old_vector[4] == symbol and old_vector[2] == symbol):
+        result = True
+    return result
 
 # verificar o empate
-def verificar_empate(vetor_da_velha):
-    resultado = True
-    for i in vetor_da_velha:
+def check_draw(old_vector):
+    result = True
+    for i in old_vector:
         if(i == '_'):
-            resultado = False
-    return resultado
+            result = False
+    return result
 
 # Variaveis do jogo
-jogador = 1
-jogador_numero_1 = 0
-jogador_numero_2 = 0
+player = 1
+player_number_1 = 0
+player_number_2 = 0
 
 while(True):
     # verifica se é a vez do jogador 1
-    if(jogador == 1):
-        jogador_numero_1 = input('Jogador 1 Digite uma posição de 1 a 9 : ')
-        if(verificar_tabela(tabela,int(jogador_numero_1)-1)):
-            tabela[int(jogador_numero_1)-1] = 'X'
-            jogador = 2
-            print(desenhar_tabela(tabela))
+    if(player == 1):
+        player_number_1 = input('Jogador 1 Digite uma posição de 1 a 9 : ')
+        if(check_table(table,int(player_number_1)-1)):
+            table[int(player_number_1)-1] = 'X'
+            player = 2
+            print(draw_table(table))
         else :
-            print(desenhar_tabela(tabela))
+            print(draw_table(table))
             print('Posicao ja ocupada')
-    if(verificar_vitoria(tabela,'X')):
+    if(check_victory(table,'X')):
         print('Jogador numero 1 ganhou. Parabéns!!!')
         break
-    if(verificar_empate(tabela)):
+    if(check_draw(table)):
         print('Empate')
         break
 
     # verifica se é a vez do jogador 2
-    if(jogador == 2):
-        jogador_numero_2 = input('Jogador 2 Digite uma posição de 1 a 9 : ')
-        if(verificar_tabela(tabela,int(jogador_numero_2)-1)):
-            tabela[int(jogador_numero_2)-1] = 'O'
-            jogador = 1
-            print(desenhar_tabela(tabela))
+    if(player == 2):
+        player_number_2 = input('Jogador 2 Digite uma posição de 1 a 9 : ')
+        if(check_table(table,int(player_number_2)-1)):
+            table[int(player_number_2)-1] = 'O'
+            player = 1
+            print(draw_table(table))
         else :
-            print(desenhar_tabela(tabela))
+            print(draw_table(table))
             print('Posicao ja ocupada')
-    if(verificar_vitoria(tabela,'O')):
+    if(check_victory(table,'O')):
         print('Jogador numero 2 ganhou. Parabéns!!!')
         break
-    if(verificar_empate(tabela)):
+    if(check_draw(table)):
         print('Empate')
         break
