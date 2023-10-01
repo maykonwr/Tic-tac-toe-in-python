@@ -1,6 +1,6 @@
 # Tic Tac Toe in Python
 
-## Tic-tac-toe game developed in Python for the Programar Project (Faculty)
+## Tic-tac-toe game developed in Python for the **Projeto programar** (College)
 
 ### This repository was created to make available the code made in the programming project video class
 
