@@ -1,7 +1,7 @@
-# Jogo da velha em Python
+# Tic Tac Toe in Python
 
-## Jogo da velha desenvolvido em Python para o Projeto Programar (Faculdade)
+## Tic-tac-toe game developed in Python for the Programar Project (Faculty)
 
-### Este repositorio foi criado para disponibilizar o codigo feito na video-aula do projeto programar
+### This repository was created to make available the code made in the programming project video class
 
-- *Tente **não copiar o codigo**, a menos que não esteja conseguindo sair do lugar;*
+- *Try **not to copy the code**, unless you can't get it out;*
